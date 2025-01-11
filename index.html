@@ -121,6 +121,15 @@
     </div>
 
     <script>
+      const safeArea = window.Telegram.WebApp.SafeAreaInset;
+
+      // Set padding for safe area
+      document.getElementById("body").style.paddingTop = safeArea.top + "px";
+      document.getElementById("body").style.paddingBottom =
+        safeArea.bottom + "px";
+      document.getElementById("body").style.paddingLeft = safeArea.left + "px";
+      document.getElementById("body").style.paddingRight =
+        safeArea.right + "px";
       // Telegram WebApp Initialization
       const videoKey =
         window.Telegram.WebApp.initDataUnsafe?.start_param ||
@@ -130,16 +139,6 @@
         window.Telegram.WebApp.requestFullscreen();
 
         // Access SafeAreaInset values
-        const safeArea = window.Telegram.WebApp.SafeAreaInset;
-
-        // Set padding for safe area
-        document.getElementById("body").style.paddingTop = safeArea.top + "px";
-        document.getElementById("body").style.paddingBottom =
-          safeArea.bottom + "px";
-        document.getElementById("body").style.paddingLeft =
-          safeArea.left + "px";
-        document.getElementById("body").style.paddingRight =
-          safeArea.right + "px";
 
         // Clear and add iframe
         document.getElementById("body").innerHTML = "";
