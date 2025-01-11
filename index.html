@@ -142,17 +142,13 @@
         window.Telegram.WebApp.requestFullscreen();
 
         // Replace only the content, not the entire body
+        body.innerHTML = "";
+
         body.innerHTML = `
           <iframe id="teraBox" width="100%" height="100%" frameborder="0" 
           src="https://1024terabox.com/sharing/embed?surl=${videoKey}&resolution=1080&autoplay=true&mute=false" 
           allowfullscreen></iframe>
         `;
-      }
-
-      function openLink() {
-        window.Telegram.WebApp.openLink(
-          url[`https://www.terabox.app/sharing/link?surl=${videoKey}`]
-        );
       }
 
       // Progress Bar Logic
@@ -174,10 +170,10 @@
           <div id="button-container">
             <button onclick="getVideo()">Play Video</button>
           </div>
-         
+          <a href="https://www.terabox.app/sharing/link?surl=${videoKey}">
             <div id="button-container">
-            <button onclick="openLink()">Download</button>
-            </div>
+            <button >Download</button>
+            </div></a>
         `;
       }
     </script>
