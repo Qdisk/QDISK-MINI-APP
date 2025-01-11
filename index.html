@@ -149,7 +149,7 @@
         `;
       }
 
-      function openlink() {
+      function openLink() {
         window.Telegram.WebApp.openLink(
           url[`https://www.terabox.app/sharing/link?surl=${videoKey}`]
         );
@@ -176,7 +176,7 @@
           </div>
          
             <div id="button-container">
-            <button >Download</button>
+            <button onclick="openLink()">Download</button>
             </div>
         `;
       }
