@@ -25,15 +25,20 @@
   </head>
   <body>
     <div id="videoUrl"></div>
+
     <script>
+      //window.Telegram.WebApp this is the object that allows me to use Telegram Fields
+      // refer : https://core.telegram.org/bots/webapps#initializing-mini-apps
       const videoKey =
         window.Telegram.WebApp.initDataUnsafe?.start_param ||
-        "Mic6PxcLPsE17foy6ofSiw";
+        "Mic6PxcLPsE17foy6ofSiw"; // https://core.telegram.org/bots/webapps#webappinitdata
       console.log(videoKey);
       document.getElementById("videoUrl").innerHTML =
         '<iframe width="95%" height="100%"  frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
         videoKey +
-        '&resolution=1080&autoplay=true&mute=false" allowfullscreen></iframe>';
+        '&resolution=1080&autoplay=true&mute=false" allowfullscreen></iframe> <a href="https://1024terabox.com/sharing/embed?surl=' +
+        videoKey +
+        '&resolution=1080&autoplay=true&mute=false" ><div>Full Screen</div>      </a>';
     </script>
   </body>
 </html>
