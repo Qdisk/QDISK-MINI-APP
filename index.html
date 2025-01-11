@@ -26,7 +26,8 @@
         width: 100vw;
       }
       #content {
-        width: 100% !important;
+        width: 90% !important;
+
         padding: 5px;
       }
       #progress-bar-container {
@@ -128,6 +129,8 @@
       function getVideo() {
         window.Telegram.WebApp.requestFullscreen();
         document.getElementById("body").innerHTML = "";
+        document.getElementById("body").style.padding =
+          window.Telegram.WebApp.SafeAreaInset;
         document.getElementById("body").innerHTML =
           '<iframe width="100%" height="100%"  frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
           videoKey +
