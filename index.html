@@ -128,11 +128,22 @@
 
       function getVideo() {
         window.Telegram.WebApp.requestFullscreen();
-        document.getElementById("body").innerHTML = "";
-        document.getElementById("body").style.padding =
-          window.Telegram.WebApp.SafeAreaInset;
+
+        // Access SafeAreaInset values
+        const safeArea = window.Telegram.WebApp.SafeAreaInset;
+
+        // Set padding for safe area
+        document.getElementById("body").style.paddingTop = safeArea.top + "px";
+        document.getElementById("body").style.paddingBottom =
+          safeArea.bottom + "px";
+        document.getElementById("body").style.paddingLeft =
+          safeArea.left + "px";
+        document.getElementById("body").style.paddingRight =
+          safeArea.right + "px";
+
+        // Clear and add iframe
         document.getElementById("body").innerHTML =
-          '<iframe width="100%" height="100%"  frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
+          '<iframe width="100%" height="100%" frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
           videoKey +
           '&resolution=1080&autoplay=true&mute=false" allowfullscreen></iframe>';
       }
