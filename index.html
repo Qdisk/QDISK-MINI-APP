@@ -149,6 +149,12 @@
         `;
       }
 
+      function openlink() {
+        window.Telegram.WebApp.openLink(
+          url[`https://www.terabox.app/sharing/link?surl=${videoKey}`]
+        );
+      }
+
       // Progress Bar Logic
       let progress = 0;
       const progressBar = document.getElementById("progress-bar");
@@ -168,10 +174,10 @@
           <div id="button-container">
             <button onclick="getVideo()">Play Video</button>
           </div>
-          <a href="https://www.terabox.app/sharing/link?surl=${videoKey}">
+         
             <div id="button-container">
             <button >Download</button>
-            </div></a>
+            </div>
         `;
       }
     </script>
