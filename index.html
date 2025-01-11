@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+
+      #videoUrl {
+        margin-top: 20px;
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+
+    <!-- this line is needed for connect the web add to Telegram client -->
+    <!-- refer: https://core.telegram.org/bots/webapps#initializing-mini-apps -->
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+  </head>
+  <body>
+    <div id="videoUrl"></div>
+    <script>
+      const videoKey =
+        window.Telegram.WebApp.initDataUnsafe?.start_param ||
+        "Mic6PxcLPsE17foy6ofSiw";
+      console.log(videoKey);
+      document.getElementById("videoUrl").innerHTML =
+        '<iframe width="95%" height="100%"  frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
+        videoKey +
+        '&resolution=1080&autoplay=true&mute=false" allowfullscreen></iframe>';
+    </script>
+  </body>
+</html>
