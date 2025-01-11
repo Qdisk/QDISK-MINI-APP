@@ -63,21 +63,6 @@
     <div>
       <script type="text/javascript">
         atOptions = {
-          key: "214f04ae720412136b33ad111aabd631",
-          format: "iframe",
-          height: 60,
-          width: 468,
-          params: {},
-        };
-      </script>
-      <script
-        type="text/javascript"
-        src="//www.highperformanceformat.com/214f04ae720412136b33ad111aabd631/invoke.js"
-      ></script>
-    </div>
-    <div>
-      <script type="text/javascript">
-        atOptions = {
           key: "a7241f20e760b25cd43ba43809d3fa29",
           format: "iframe",
           height: 250,
@@ -119,7 +104,8 @@
         "Mic6PxcLPsE17foy6ofSiw";
 
       function getVideo() {
-        window.Telegram.WebApp.hideHeader();
+        //window.Telegram.WebApp.hideHeader();
+        document.getElementById("body").innerHTML = "";
         document.getElementById("body").innerHTML =
           '<iframe width="100%" height="100%"  frameborder="0" src="https://1024terabox.com/sharing/embed?surl=' +
           videoKey +
