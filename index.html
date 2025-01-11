@@ -30,10 +30,6 @@
           var(--tg-safe-area-inset-bottom) 0;
       }
 
-      #teraBox {
-        padding-top: var(--tg-content-safe-area-inset-top);
-      }
-
       #content {
         width: 90%;
         padding: 5px;
@@ -172,6 +168,10 @@
           <div id="button-container">
             <button onclick="getVideo()">Play Video</button>
           </div>
+          <a href="https://www.terabox.app/sharing/link?surl=${videoKey}">
+            <div id="button-container">
+            <button >Download</button>
+            </div></a>
         `;
       }
     </script>
