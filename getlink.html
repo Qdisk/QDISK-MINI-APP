@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extract and Copy URL</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      h1 {
+        color: #555;
+      }
+
+      textarea {
+        width: 100%;
+        max-width: 800px;
+        height: 150px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #006600;
+        background: #e6ffe6;
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 800px;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Extract and Copy URL</h1>
+    <textarea
+      id="iframeInput"
+      placeholder="Paste your terabox iframe code here"
+    ></textarea>
+    <br />
+    <button onclick="extractAndCopy()">Extract and Copy URL</button>
+    <p id="result"></p>
+
+    <script>
+      function extractAndCopy() {
+        // Get the iframe input from the textarea
+        const iframeCode = document.getElementById("iframeInput").value;
+
+        // Use a regular expression to extract the surl parameter
+        const match = iframeCode.match(/surl=([^&"]+)/);
+
+        if (match) {
+          const surl = match[1]; // Extracted surl value
+          const finalUrl = `https://t.me/qplayerbot/QDISK?startapp=${surl}`;
+          document.getElementById("result").innerText = `${finalUrl}`;
+
+          // Copy the URL to the clipboard
+          navigator.clipboard.writeText(finalUrl).then(() => {
+            alert("URL copied to clipboard!");
+          });
+        } else {
+          document.getElementById("result").innerText =
+            "No id found in then code!";
+        }
+      }
+    </script>
+  </body>
+</html>
